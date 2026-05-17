@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Raw WESAD subject data (too large for GitHub, ~13GB total)
+S2/
+S3/
+S4/
+S5/
+S6/
+S7/
+S8/
+S9/
+S10/
+S11/
+S13/
+S14/
+S15/
+S16/
+S17/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc

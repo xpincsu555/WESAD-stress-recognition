@@ -1,0 +1,281 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Who are like that. Just thinking like this. Like I got em.
+
+Um, whereas, you know, so that we can.
+
+It's like. It's like Trump. Like.
+
+But they're not. They're not really. Good for one thing.
+
+So there's like, it was. Probably something really cool.
+
+Um, it's gonna be really cool, but, um, it's not for Myers.
+
+I. That's something people part.
+
+Sure. It's on the wall, right on June 4th.
+
+Uh, okay. All right.
+
+Um, like, uh, there's like that black, uh, like, receptacle, like plastic container right on the wall.
+
+On a wall. Yeah, on the wall. Uh, down the wall.
+
+Uh, before we get started, um, please download it, like.
+
+Uh, it's, uh, Moodle, please. Uh, lecture eight.
+
+There are many useful links, uh, in the slides.
+
+Uh. Right.
+
+Uh, thanks for coming, uh, to, uh, and, uh, I'm going to tell you all the details of the, the project.
+
+Uh, we're going to do a project, uh, about RPG based application.
+
+Uh, we're going to do, uh, emotion recognition from television signals.
+
+Uh, here's a quick background. Um, picture is super popular.
+
+I think it's the most popular, uh, uh, sensor data now on mobile health.
+
+Um, if you're wearing, um, like Apple Watch, then you're are using it every day because, uh, literally all the, uh,
+
+all the metrics, all the, uh, all those metrics are populated based on PPG, and one of its application is, uh, emotion.
+
+Congratulations. Uh, I don't I don't know whether you have ever tried it.
+
+Uh, so I personally, I think the, uh, the pressure detection on Apple Watch is it's an accurate.
+
+You only, uh, give you warnings when when I'm very pleased.
+
+So I hope, uh, through this project, you guys will learn how how this, this kind of application works because they actually runs in the same way,
+
+whether it's, uh, pressure detection, uh, exercise detection, sleeping monitoring.
+
+They're all using PPG signals.
+
+All right. So so the goal of the project is quite straightforward.
+
+Uh, we'll give you a data set, download it and process the data, uh, and then build a emotion classifier on it.
+
+All right. So first is the dataset introduction.
+
+The dataset is called which is the most popular dataset in this field.
+
+Uh, it has 15 subjects with their 15 signals and their emotion labels.
+
+So we're going to, uh, model it uh, the download link here, you can just click it.
+
+And download it. Uh, after download it and unzip it, you will see, uh, data in this structure.
+
+Uh, so the first step should be read the remaining carefully.
+
+Uh, the room is very detailed. It tells you everything about data set.
+
+Uh, what's inside it? Uh, how to use it? Uh.
+
+It. Uh, there's a folder for each subject.
+
+And under the folder here are all the, uh, central datas.
+
+Uh, here are some some tips for you. Uh.
+
+Uh, the most important one. This is this is the second one. Uh, you can directly use the the pico.
+
+The pico data. Uh, it's the most easy way because it contains all the, uh, synchronize data.
+
+Uh, why is it supervised? Uh, because out of PG, there are many others since it begins, like egg like accelerators from IMU.
+
+So. Uh, they have to be synchronized before using it.
+
+Uh, yeah. So. So using the Picos is the easiest way.
+
+Uh, but here, uh, we only only use 5G data.
+
+Uh. Yeah. So? So so you can just, uh, use it and, uh, it really second to.
+
+It's detailed, uh, how to use it. Um.
+
+And and our tasks. Uh, as I just said, the task is very simple.
+
+The first one, uh, the the, uh, the first step is data processing.
+
+The second one is modeling. Uh, and section three is, uh, telling us we are experiment results.
+
+Uh. So the first step, uh, what you're going to do is to extract the raw signal from from the data set.
+
+Uh. In this time, you're going to do lots of data processing.
+
+Uh, and here at least, uh, to necessary.
+
+Uh, stab you. You have to do it. It's, uh.
+
+Yeah. The first one is filtering. Uh, if you visualize the row signal, you'll find that it's.
+
+It's very irregular, unlike what you expected.
+
+Unlike the signal, uh, hospital, you see, uh, because there are lots of noises were introduced.
+
+Well, collecting. Uh, here is three typical, uh, noises and why they were introduced, why and how they were introduced.
+
+So our goal is to remove all those noises to, to make it to, to make them regular.
+
+Make them smooth. And the filter we're going to apply is a band pass filter.
+
+Uh, and the Butterworth is the most popular one. Uh, so generally we're going to.
+
+To to set a rent, set a bandpass,
+
+and this filter will preserve all the signals within the within the band pass and a rule it will greatly remove signals out of that range.
+
+Uh. Yeah, I can see the.
+
+Here's an example. Uh, the three above is the row of signal, and this is the signal after filtering.
+
+And here are three key, uh, parameters of this filter.
+
+Uh, the low low, low cutoff and the high of.
+
+Yeah. And after filtering.
+
+The second step is segmentation.
+
+Because, uh, for the row 5G signals, it will be a very long uh, session, uh, contain all the sessions that I have done.
+
+So like this should be a 20 minutes 5G signals.
+
+Uh, of course that's not going to be the input of your models.
+
+So the first step is to segment it, uh, by by sessions.
+
+Uh, for for age subjects is age such as, uh, should save them alone and we need to do another window ization for each subjects, each sessions.
+
+Because for, uh, because the, let's say, uh, each subject, it's each subject, uh, amusement sessions.
+
+Uh, it should be three minutes. And, uh, we are going to win analyze it to get more data.
+
+Because if we don't, we realize it. Uh, for each session, they only have one sample for for each subject.
+
+So maybe we'll set, uh, their window size to 20s and the window step to, um.
+
+10s and we'll just segment it.
+
+Window by windows together to get the final data we are going to use.
+
+Uh. Uh, the two next steps.
+
+It's definitely not now. The only two start to now.
+
+Uh, now the only two processing steps you are going to take.
+
+Uh, for example, you are using a deep learning models.
+
+Of course you are going to normalize it. So.
+
+So on your report. Well, you're going to write on your report is, uh, list all the.
+
+Data processing steps. And tell us why you are using it.
+
+And after completing all the. Pre-processing steps, give us a visualization of processed signals.
+
+Uh, just like this. Like this figure. But this figure shows, uh, the row of empty or for a should be a process to produce segments.
+
+Uh, the second part is, uh, scoring models, putting an, uh, emotion classifier on, on that dataset.
+
+Uh, you have to implement at least one classifier, and, uh, there's no limits on the models.
+
+Uh, machine learning models, deep learning models.
+
+They're both okay. Uh, and all your reports.
+
+Just tell us your implementation details. Uh, we don't need your code.
+
+The only thing you submit is your report.
+
+So just tell to tell us everything about your models on the report.
+
+Uh, if you are using a deep learning models, you are encouraged to include a diagram of the model's architecture.
+
+And here are two approaches to build, uh, emotion classification models.
+
+Uh, the first one is an end to end approach, which means the input will be the, uh, vg segments and the output is the labels.
+
+Uh, the model will learn how to, uh, classify the emotions from the row segments.
+
+Uh, the second one is feature base, which means the first, I will extract some emotion related features from the signal.
+
+And we will use those images to predict the emotional, uh, the emotion levels.
+
+So you are encouraged to implement both of them implement as well.
+
+Uh, more as you can and tell us your conferences.
+
+Uh, finally, the, uh, experiments and analysis.
+
+Ya, in this part of this, uh, show your metrics, uh, performances, uh, and tables and try your best to give us some some insights.
+
+Yeah, uh, we know it's it's hard to tell the to tell why this model works, why the model doesn't work.
+
+Yeah, but, uh, you just try your best to give us some insights.
+
+Yeah. Uh, here are some final tips.
+
+The first one is here released the the datasets original papers is super useful.
+
+Uh, because, um, their paper, they provided, uh, their baseline models.
+
+So when the paper shows. Uh, explicitly how they process the data and how which model they used.
+
+And the second paper. Uh, it's a, uh, it's the latest paper of it.
+
+Uh, it said it's a hybrid thing, which means, uh, in their model, they have two branches.
+
+The first branch is the end to end method, and the second one is the feature based.
+
+They. So they use both of them. Uh, both of them.
+
+Uh, I'm not saying just using their models, but, uh, I think the two papers show you how to process the data.
+
+Uh, and the second tip is to. It's about the traintestsplit.
+
+So please lead them by subject. So, for training, uh, don't use, like, 80% of each subject.
+
+You should use, like, ten subject to train and five subject to validate to to test.
+
+Yeah. All right. Uh, this is not a, uh, programing computation.
+
+So you can use any language programing languages, and we're not going to, uh, evaluate your report on your final, uh, performances.
+
+So it doesn't mean your occurrence is high and you will get higher grades.
+
+Uh, you can finish it on your own or in groups of two.
+
+Uh. Please submit. Submit your, uh, group information by next Monday.
+
+Uh, through this link. And the final project report deadline is April 27th.
+
+All right. Um, any questions so far?
+
+If there are any question, you can come over and the rest of time is yours. Ken, final team mate.
+
+Uh, yeah. And somebody. Submit your your team information.
+
+Yeah. Uh, you can find your team mate here.
+
+Uh, you. No question. You are free to go. Yeah. Are we provided with?
+
+So. Yeah. You can't.
+
+Them. Oh.
+
+Yes. Mr.
+
+What you can take. A message, remember.
+
+I'm sorry. I just. At 1.24.
+
+I was thinking about. How awesome it could be.
+
+Right.
+
