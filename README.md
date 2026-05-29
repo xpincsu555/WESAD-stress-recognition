@@ -1,6 +1,6 @@
 # PPG-Based Stress & Emotion Recognition (WESAD Dataset)
 
-Course project for **CSC 491/591 — Ubiquitous Computing and Mobile Health**.
+Course project for **Ubiquitous Computing and Mobile Health**.
 
 Classifies three emotional states — **Baseline**, **Stress**, and **Amusement** — from wrist-worn PPG (photoplethysmography) signals using the WESAD dataset.
 
